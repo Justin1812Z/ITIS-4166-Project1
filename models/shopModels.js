@@ -94,14 +94,22 @@ const items = [{
 }
 ]
 
+
+// let items;
+// exports.getCollection = db=>{
+//     items = db.collection('items');
+// }
+
 exports.find = () => items;
 
 exports.findById = id => items.find(item => item.id === id);
 
 exports.getSortedItems = function () {
+    if(items){
     items.sort((a, b) => {
         return a.price - b.price;
-    });
+        });
+    }   
     return items;
 }
 

@@ -2,7 +2,7 @@
 
     <main>
       
-      <%if(items.length) {%>
+      <%if(items && items.length) {%>
         <%items.forEach(item=>{%>
           <%if(item.active === 'true') {%>
           <div class="item">
