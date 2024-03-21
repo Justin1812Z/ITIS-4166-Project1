@@ -1,0 +1,29 @@
+<%- include('../partials/header.ejs')%>
+
+    <main>
+      
+      <%if(items.length) {%>
+        <%items.forEach(item=>{%>
+          <%if(item.active === 'true') {%>
+          <div class="item">
+            <!-- <img src="<%= item.image %>" alt="item"> -->
+            <img src="<%= item.image %>" alt="item">
+            <h2><%= item.title %></h2>
+            <p>Condition: <%= item.condition %></p>
+            <p>Price: <%= item.price %></p>
+            <p>Total Offers: <%= item.offers %></p>
+            <a href="/shop/item/<%= item.id %>">View Details</a>
+            <%console.log('created ' + item.id); %>
+          </div>
+          <% } %>
+        <% });
+        } else{%>
+            <p>There are no items to display.</p>
+        <% } %>
+        
+    </main>
+
+  <%- include('../partials/footer.ejs')%>
+  </body>
+ 
+</html>

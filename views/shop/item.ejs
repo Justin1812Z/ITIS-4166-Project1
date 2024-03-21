@@ -1,0 +1,45 @@
+<%- include('../partials/header.ejs')%>
+
+  <main>
+    <div class="item-details">
+      <div class="item-image">
+        <img src="<%= item.image %>" alt="<%= item.details %>">
+      </div>
+      <div class="item-info">
+        <h2>
+          <%= item.title %>
+        </h2>
+        <p><strong>Condition:</strong>
+          <%= item.condition %>
+        </p>
+        <p><strong>Price:</strong>
+          <%= item.price %>
+        </p>
+        <p><strong>Offers Received:</strong>
+          <%= item.offers %>
+        </p>
+        <p><strong>Seller:</strong>
+          <%= item.seller %>
+        </p>
+        <div class="buttons">
+          <!-- <button type = "submit" formmethod = "GET" formaction = "/stories/<%= item.id%>/edit">Edit</button>
+            <button type = "submit" formmethod = "POST" formaction = "/shop/<%= item.id%>?_method=DELETE">Delete</button> -->
+          <!-- <button type = "submit" formmethod = "GET" formaction = "/shop/items">Delete</button> -->
+          <form>
+            <button type = "submit" formmethod = "GET" formaction = "/shop/<%= item.id%>/edit">Edit</button>
+            <button type = "submit" formmethod = "POST" formaction = "/shop/<%= item.id%>?_method=DELETE">Delete</button>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </main>
+
+  <%- include('../partials/footer.ejs')%>
+    </body>
+
+    </html>

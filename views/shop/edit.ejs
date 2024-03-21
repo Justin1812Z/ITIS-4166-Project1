@@ -1,0 +1,46 @@
+<%- include('../partials/header.ejs')%>
+<main>
+    <form action="/shop" method="POST" enctype="multipart/form-data" id="new-item-form">
+     <div class="form-group">
+        <label for="condition">Condition:</label>
+        <select name="condition" id="condition" required>
+          <option value="<%= item.condition%>" selected><%= item.condition%></option>
+          <option value="new">New</option>
+          <option value="like-new">Like New</option>
+          <option value="used-good">Used (Good)</option>
+          <option value="used-fair">Used (Fair)</option>
+          <option value="parts-only">For Parts Only</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" value="<%= item.title%>" required>
+      </div>
+
+      <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="number" name="price" id="price" value="<%= item.price%>" required>
+      </div>
+
+      <div class="form-group">
+        <label for="details">Details:</label>
+        <textarea name="details" id="details" rows="4" required><%= item.details%></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="image">Image:</label>
+        <input type="file" name="image" id="image" accept="image/*" value="<%= item.details%>" required>
+      </div>
+
+      <div class="form-group">
+        <label for="seller">Seller Name:</label>
+        <input name="seller" id="seller" value="<%= item.seller%>" required></input>
+      </div>
+
+      <div class="form-group">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </main>
+<%- include('../partials/footer.ejs')%>
